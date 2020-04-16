@@ -46,7 +46,7 @@ class DeskisElement {
             const filename : string = processed[1].name;
             const item : HTMLElement = elements.processed[filename];
 
-            const newFile : string = filename.replace(".csv","_processed.csv");
+            const newFile : string = filename.replace(".csv","_SUM.csv");
             let statusClass : string = (processed[0] === "finished"?"file-ok":"file-error");
             let statusText : string = "OK";
             let statusN : string = "OK";
