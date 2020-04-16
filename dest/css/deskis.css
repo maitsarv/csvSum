@@ -1,0 +1,111 @@
+.deskis-element{
+    max-width: 600px;
+    margin: 10px auto;
+    font-family: Segoe UI,Helvetica,Arial,sans-serif,Segoe UI Emoj;
+}
+
+.deskis-element .file-input{
+    background-color: #006f45;
+    color: #ffffff;
+    padding: 10px 16px;
+    align-content: center;
+    text-align: center;
+}
+
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 6px solid #006f45;
+    border-color: #006f45 transparent #006f45 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.deskis-element .file-input label{
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #ffffff;
+    font-size: 18px;
+}
+.deskis-element .file-input label:hover{
+    background-color: white;
+    color: #006f45;
+    cursor: pointer;
+}
+.deskis-element .file-input [type="file"]:focus + label {
+    outline: 1px dotted #000;
+}
+
+.deskis-element .processed-file-list{
+    border: 2px solid #006f45;
+    min-height: 32px;
+}
+
+.deskis-element .processed-file-list>div{
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #006f45;
+    min-height: 44px;
+}
+.deskis-element .processed-file-list .file-name{
+    width: 100px;
+    flex-grow: 3;
+}
+.deskis-element .processed-file-list .status{
+    width: 80px;
+    margin-left: auto;
+    text-align: center;
+}
+.deskis-element .processed-file-list .status.file-ok{
+    color: #006f45;
+}
+.deskis-element .processed-file-list .status.file-warning{
+    color: #c46d06;
+    font-size: 20px;
+    transform: scale(2,1);
+}
+.deskis-element .processed-file-list .status.file-error{
+    color: #ae0001;
+    font-size: 20px;
+    transform: scale(2,1);
+}
+.deskis-element .processed-file-list .download{
+    width: 100px;
+    text-align: right;
+}
+.deskis-element .processed-file-list .download a{
+    text-decoration: none;
+    color: #006f45;
+    padding: 4px 2px;
+}
+
