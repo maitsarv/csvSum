@@ -191,7 +191,7 @@ var DeskisElement = /** @class */ (function () {
         var callback = function (processed, errors) {
             var filename = processed[1].name;
             var item = elements.processed[filename];
-            var newFile = filename.replace(".csv", "_processed.csv");
+            var newFile = filename.replace(".csv", "_SUM.csv");
             var statusClass = (processed[0] === "finished" ? "file-ok" : "file-error");
             var statusText = "OK";
             var statusN = "OK";
