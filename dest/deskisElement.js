@@ -2,7 +2,7 @@ var DeskisCalc = /** @class */ (function () {
     function DeskisCalc() {
         this.errors = {
             'parse': {},
-            'calc': {},
+            'calc': {}
         };
         this.fileQueue = [];
         this.processedFiles = [];
@@ -42,12 +42,20 @@ var DeskisCalc = /** @class */ (function () {
         };
         this.filesProcessedCallback = callback;
         this.processedFiles = [];
-        for (var i = 0; i < files.length; i++) {
+        var _loop_1 = function (i) {
             var file = files[i];
             var type = file.type;
-            if (type !== "text/csv")
-                continue;
-            this.fileQueue.push(file);
+            if (type.indexOf("csv") < 0 && type.indexOf("text/") < 0 && type !== "") {
+                setTimeout(function () {
+                    callback(["ignore", file, null], [2, "incorrect file format: " + type]);
+                }, 2);
+                return "continue";
+            }
+            this_1.fileQueue.push(file);
+        };
+        var this_1 = this;
+        for (var i = 0; i < files.length; i++) {
+            _loop_1(i);
         }
         this.processFile();
     };

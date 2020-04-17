@@ -53,7 +53,12 @@ class DeskisCalc  {
         for (let i = 0; i<files.length;i++){
             let file: File = files[i];
             let type = file.type;
-            if(type !== "text/csv") continue;
+            if(type.indexOf("csv")<0 && type.indexOf("text/")<0 && type !== "") {
+                setTimeout(function () {
+                    callback(["ignore",file,null],[2,"incorrect file format: "+type]);
+                },2);
+                continue
+            }
             this.fileQueue.push(file);
         }
         this.processFile();

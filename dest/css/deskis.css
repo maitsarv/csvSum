@@ -85,6 +85,8 @@
     width: 80px;
     margin-left: auto;
     text-align: center;
+    position: relative;
+    z-index: 0;
 }
 .deskis-element .processed-file-list .status.file-ok{
     color: #006f45;
@@ -109,3 +111,17 @@
     padding: 4px 2px;
 }
 
+.deskis-element .processed-file-list .status:active:after{
+    content:attr(title);
+    position: absolute;
+    top: 100%;
+    color: #ffffff;
+    font-size: 11px;
+    left: -3px;
+    background-color: rgba(0,0,0,.7);
+    padding: 3px;
+    z-index: 20;
+}
+.deskis-element .processed-file-list .status:not(.file-ok):active:after{
+    transform: scale(0.5,1);
+}
